@@ -1,0 +1,72 @@
+.bg-fixed{
+    background-image: url('../img/activities2.jpeg');
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+}
+.wrap{
+    min-height: 100vh;
+}
+.icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.icon>i{
+    position: absolute;
+    font-size: 3rem;
+    color: rgb(61, 61, 167);
+    animation: move 3s ease-out infinite;
+}
+.icon>i:first-child{
+    animation: move 3s ease-out 1s infinite;
+}
+.icon>i:nth-child(2){
+    animation: move 3s ease-out 2s infinite;
+}
+@keyframes move {
+    0%{
+        opacity: 0;
+        transform: scale(1.2);
+    }
+    25%{
+        opacity: 1;
+    }
+    33%{
+        opacity: 1;
+        transform: translateY(2.28rem);
+    }
+    66%{
+        opacity: 1;
+        transform: translateY(3.12rem);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(4.8rem) scale(.5);
+    }
+}
+.home{
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.home i{
+    color: white;
+    z-index: 100;
+    padding: 5px 10px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+}
+.home:hover i{
+    color: black;
+    background-color: white;
+}

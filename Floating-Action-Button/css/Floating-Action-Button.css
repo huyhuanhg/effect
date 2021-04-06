@@ -1,0 +1,93 @@
+:root{
+    --main-bg: #2d3436;
+    --color: #fff;
+
+    --fab-item-bg: #e17055;
+    --fab-toggle-bg: #6c5ce7;
+
+    --fab-item-size: 70px;
+    --fab-toggle-size: 90px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100vh;
+    background-color: var(--main-bg);
+    position: relative;
+}
+.fab{
+    position: absolute;
+    bottom: 100px;
+    left: 60%;
+}
+.fab-wrapper{
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: var(--fab-toggle-size);
+    height: var(--fab-toggle-size);
+}
+.fab-wrapper button{
+    position: absolute;
+    border-radius: 50%;
+    outline: transparent;
+    border: transparent;
+    color: var(--color);
+    cursor: pointer;
+}
+.fab-item{
+    background-color: var(--fab-item-bg);
+    width: var(--fab-item-size);
+    height: var(--fab-item-size);
+    font-size: 2rem;
+    transition: .6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.fab-toggle{
+    background-color: var(--fab-toggle-bg);
+    width: var(--fab-toggle-size);
+    height: var(--fab-toggle-size);
+    font-size: 2.5rem;
+}
+.fab-toggle::after, .fab-toggle::before{
+    content: '';
+    background-color: var(--color);
+    position: absolute;
+    transition: .6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.fab-toggle::before{
+    left: 25%;
+    width: 50%;
+    height: 5px;
+    top: calc(50% - 2.5px);
+}
+.fab-toggle::after{
+    width: 5px;
+    height: 50%;
+    left: calc(50% - 2.5px);
+    top: 25%;
+}
+.fab-toggle.active::after, .fab-toggle.active::before{
+    transform: rotate(45deg);
+}
+
+.home{
+    display: block;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+.home i{
+    color: white;
+    z-index: 100;
+    padding: 5px 10px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 5px;
+}
+.home:hover i{
+    color: black;
+    background-color: white;
+}
